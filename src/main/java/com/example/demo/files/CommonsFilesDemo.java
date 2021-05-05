@@ -10,6 +10,8 @@ public interface CommonsFilesDemo {
 
     public static final String  ASPAS_SIMPLES = "'";
 
-    public static final String  PATH = "/home/cristiano/Documentos/lojas_ipiranga/03052021.csv";
+    public static final String FORMAT_VALUE = "%,.2f";
+
+    public static final String  PATH = "/home/cristiano/Documentos/lojas_ipiranga/05052021.csv";
 
 }

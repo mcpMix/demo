@@ -6,6 +6,7 @@ import com.opencsv.CSVReaderBuilder;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -29,7 +30,11 @@ public class StoreCsvConverter implements Function<Path, Optional<List<StoreCsv>
     private static List<StoreCsv> parse(List<String[]> lines) {
         List<StoreCsv> stores = new ArrayList<>();
         for (String[] item : lines) {
-            stores.add(new StoreCsv(item[0]));
+            StoreCsv storeCsv = new StoreCsv( );
+            storeCsv.setStore_uuid(((String)item[0]));
+            storeCsv.setStatus( ((String)item[2]));
+            storeCsv.setValor(new BigDecimal(item[1]));
+            stores.add(storeCsv);
         }
         return stores;
     }
